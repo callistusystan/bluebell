@@ -11,7 +11,7 @@
     box-sizing: border-box;
     --feature32: normal normal 400 32px/32px 'Capriola';
     --feature18: normal normal 400 18px/20px 'Capriola';
-    --title: normal normal 400 24px/24px 'Capriola';
+    --title: normal normal 400 24px/28px 'Capriola';
     --mini-title: normal normal 600 18px/20px 'GillSans';
     --copy16: normal normal 400 16px/18px 'GillSans';
     --copy14: normal normal 400 14px/16px 'GillSans';
@@ -19,7 +19,7 @@
     --snow: #fff;
     --mist: #F8F8F8;
     --sunshine: #F2EAB6;
-    --bark: #D6B077;
+    --bark: #C9A062;
     --skies: #5EBFD4;
     --grass: #94A60F;
     --bluebell: #947AF7;
@@ -39,7 +39,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background: linear-gradient(140deg, #B4A2F7 0%, #7C5ED4  100%);
+        background: linear-gradient(140deg, #FFF 0%, #5EBFD4  100%);
         background-size: 400% 400%;
         -webkit-animation: Gradient 15s ease-in-out infinite;
         -moz-animation: Gradient 15s ease-in-out infinite;

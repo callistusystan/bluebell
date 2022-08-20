@@ -51,6 +51,8 @@ class HomePage extends Component {
                 <Button to="/register" label="Register" variant="secondary" style={{marginTop: 16}} />
 
                 <Link to="/reset-password" style={{color: 'var(--navy)', marginTop: 16, font: 'var(--copy14)'}}>Forgot your password?</Link>
+
+                <img src="branch.svg" style={{width: '100%', position: 'absolute', bottom: 14, pointerEvents: 'none'}} />
               </div>
             </ScrollView>
         );
