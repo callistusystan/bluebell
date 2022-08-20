@@ -169,9 +169,9 @@ class ProfilePage extends Component {
                 display: "flex",
               }}
             >
-              <div
-                style={{ width: 80, height: 80, background: "#D9D9D9" }}
-              ></div>
+              <img
+                  src="https://live-production.wcms.abc-cdn.net.au/04735f3fcbe87901266dca0b4ab93ce2?impolicy=wcms_crop_resize&cropH=394&cropW=700&xPos=0&yPos=0&width=862&height=485"
+                  style={{ width: 80, height: 80, background: "#D9D9D9" }}/>
               <div
                 style={{
                   flex: 1,
@@ -183,7 +183,7 @@ class ProfilePage extends Component {
                 <span
                   style={{ color: "var(--dark)", font: "var(--mini-title)" }}
                 >
-                  Article about biodiversity or climate change
+                  City of Sydney to consider ban on fossil fuel advertising to fight climate change, pollution
                 </span>
                 <span
                   style={{
@@ -192,7 +192,7 @@ class ProfilePage extends Component {
                     font: "var(--copy14)",
                   }}
                 >
-                  Author or publisher
+                  ABC Radio Sydney<br/>By Rosemary Bolger
                 </span>
               </div>
             </div>
