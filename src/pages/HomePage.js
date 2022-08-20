@@ -18,9 +18,10 @@ class HomePage extends Component {
 
     renderLoading = () => {
         return (
-            <LoadingView>
-                <HashLoader color='var(--bluebell)' loading={!this.state.ready} />
-            </LoadingView>
+          <LoadingView
+            style={{ background: "var(--bark)", position: "absolute", zIndex: 100 }}>
+            <HashLoader color='#947AF7' loading={!this.state.ready} />
+          </LoadingView>
         );
     };
 
@@ -58,7 +59,8 @@ class HomePage extends Component {
     render() {
         return (
             <div style={styles.container}>
-              {this.state.ready ? this.renderBody() : this.renderLoading()}
+              {this.renderBody()}
+              {this.state.ready ? null : this.renderLoading()}
             </div>
         );
     }

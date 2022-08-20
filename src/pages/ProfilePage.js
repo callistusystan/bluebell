@@ -35,14 +35,14 @@ class ProfilePage extends Component {
     };
 
     componentDidMount() {
-        setTimeout(() => this.setState({ ready: true }), 3000);
+        setTimeout(() => this.setState({ ready: true }), 500);
     }
 
     renderLoading = () => {
         return (
             <LoadingView
-              style={{ background: "#fff", position: "absolute", zIndex: 100 }}>
-              <HashLoader color='var(--bluebell)' loading={!this.state.ready} />
+              style={{ background: "var(--bark)", position: "absolute", zIndex: 100 }}>
+              <HashLoader color='#947AF7' loading={!this.state.ready} />
             </LoadingView>
         );
     };
