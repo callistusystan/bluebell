@@ -15,11 +15,11 @@ const locations = [
   },
   {
     name: "Australian National Botanic Gardens",
-    bgName: "collection-bg.svg",
+    bgName: "stamp/garden.svg",
   },
   {
     name: "Cooleman Ridge Nature Reserve",
-    bgName: "collection-bg.svg",
+    bgName: "stamp/cooleman.svg",
   },
   {
     name: "Bruce Ridge Nature Reserve",
@@ -28,7 +28,6 @@ const locations = [
   {
     name: "Jerrabomberra Wetlands",
     bgName: "stamp/wetlands.svg",
-    date: "Jan 1, 2022",
   },
   {
     name: "Namadgi National Park",
@@ -45,7 +44,7 @@ const locations = [
   },
   {
     name: "Urambi Hills",
-    bgName: "collection-bg.svg",
+    bgName: "stamp/urambi.svg",
   },
   {
     name: "Tuggeranong Hill",

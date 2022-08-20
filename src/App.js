@@ -11,7 +11,7 @@ class App extends Component {
       <MobileHackathon>
         <Switch>
           <Route path="/profile" component={ProfilePage} />
-          <Route path="/stamp-collection" component={StampCollectionPage} />
+          <Route path="/collection" component={StampCollectionPage} />
           <Route exact path="/" component={HomePage} />
         </Switch>
       </MobileHackathon>
