@@ -35,12 +35,13 @@ class ProfilePage extends Component {
     };
 
     componentDidMount() {
-        setTimeout(() => this.setState({ ready: true }), 500);
+        setTimeout(() => this.setState({ ready: true }), 3000);
     }
 
     renderLoading = () => {
         return (
-            <LoadingView>
+            <LoadingView
+              style={{ background: "#fff", position: "absolute", zIndex: 100 }}>
               <HashLoader color='var(--bluebell)' loading={!this.state.ready} />
             </LoadingView>
         );
@@ -64,7 +65,6 @@ class ProfilePage extends Component {
               <div
                   style={{
                     background: 'var(--mist)',
-                    height: '300%',
                     display: 'flex',
                     flexDirection: 'column',
                     padding: '0 24px'}}>
@@ -100,11 +100,11 @@ class ProfilePage extends Component {
                       display: 'flex', 
                       flexDirection: 'column',
                     }}>
-                  <span style={{color: 'var(--dark)', font: 'var(--feature18)'}}>
-                    {stampName || 'Stamp Name'}
+                  <span style={{color: 'var(--dark)', font: 'var(--mini-title)'}}>
+                    Article name
                   </span>
-                  <span style={{marginTop: 4, color: 'var(--slate)', font: 'var(--copy12)'}}>
-                    Obtained {date || 'Jan 1 2022'}
+                  <span style={{marginTop: 4, color: 'var(--slate)', font: 'var(--copy14)'}}>
+                    Author or publisher
                   </span>
                 </div>
               </div>
@@ -117,7 +117,8 @@ class ProfilePage extends Component {
     render() {
         return (
             <div style={styles.container}>
-              {this.state.ready ? this.renderBody() : this.renderLoading()}
+              {this.renderBody()}
+              {this.state.ready ? null : this.renderLoading()}
             </div>
         );
     }
