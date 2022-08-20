@@ -4,6 +4,8 @@ import ProfilePage from "./pages/ProfilePage";
 import MobileHackathon from "./components/react-mobile-hackathon";
 import { Route, Switch } from "react-router-dom";
 import StampCollectionPage from "./pages/StampCollectionPage";
+import QRPage from "./pages/QRPage";
+import QRSuccessPage from "./pages/QRSuccessPage";
 
 class App extends Component {
   render() {
@@ -12,6 +14,8 @@ class App extends Component {
         <Switch>
           <Route path="/profile" component={ProfilePage} />
           <Route path="/collection" component={StampCollectionPage} />
+          <Route path="/qr" component={QRPage} />
+          <Route path="/qr-success" component={QRSuccessPage} />
           <Route exact path="/" component={HomePage} />
         </Switch>
       </MobileHackathon>
