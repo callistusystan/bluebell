@@ -3,14 +3,14 @@ import React from "react";
 
 class Slide extends React.Component {
   componentDidMount() {
-    new Glide(".glide", { perView: 3 }).mount();
+    new Glide(".glide", { perView: 2 }).mount();
   }
 
   render() {
     return (
-      <div class="glide">
+      <div class="glide" style={{...this.props.style}}>
         <div class="glide__track" data-glide-el="track">
-          <ul class="glide__slides">
+          <ul class="glide__slides" style={{padding: 4}}>
             {React.Children.map(this.props.children, (child) => (
               <li class="glide__slide">{React.cloneElement(child)}</li>
             ))}

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ScrollView from '../components/react-mobile-hackathon/devices/ScrollView';
 import LoadingView from '../components/react-mobile-hackathon/devices/LoadingView';
-import { GridLoader } from 'react-spinners';
+import { HashLoader } from 'react-spinners';
 import { Link } from 'react-router-dom';
 import Button from '../components/button';
 
@@ -19,7 +19,7 @@ class HomePage extends Component {
     renderLoading = () => {
         return (
             <LoadingView>
-                <GridLoader color='var(--bluebell)' loading={!this.state.ready} />
+                <HashLoader color='var(--bluebell)' loading={!this.state.ready} />
             </LoadingView>
         );
     };

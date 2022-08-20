@@ -9,9 +9,10 @@
     padding: 0;
     font-family: 'Capriola', sans-serif;
     box-sizing: border-box;
-    --feature: normal normal 400 32px/32px 'Capriola';
+    --feature32: normal normal 400 32px/32px 'Capriola';
+    --feature18: normal normal 400 18px/20px 'Capriola';
     --title: normal normal 400 24px/24px 'Capriola';
-    --mini-title: normal normal 600 18px/20px 'Capriola';
+    --mini-title: normal normal 600 18px/20px 'GillSans';
     --copy16: normal normal 400 16px/18px 'GillSans';
     --copy14: normal normal 400 14px/16px 'GillSans';
     --copy12: normal normal 400 12px/14px 'GillSans';
