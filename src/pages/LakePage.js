@@ -2,6 +2,8 @@ import React, { Component, useEffect } from 'react';
 import LoadingView from '../components/react-mobile-hackathon/devices/LoadingView';
 import { HashLoader } from 'react-spinners';
 
+const TIME_PER_STORY = 5000;
+
 const Story = ({children, onNext, onPrev, style}) => {
   return (
     <div style={{position: 'relative', height: '100%', width: '100%', cursor: 'pointer', ...style}}>
@@ -87,9 +89,31 @@ const PlaceStory = ({place, description, grasslandClass, threatenedFauna, onPrev
   );
 }
 
-const Bar = ({active}) => {
+const Bar = ({active, timeElapsed, isCurrent}) => {
+  if (isCurrent) {
+    const perc = timeElapsed/TIME_PER_STORY;
+    console.log(perc);
+    return (
+      <div
+          style={{
+            height: 5,
+            width: 56,
+            borderRadius: 10,
+            background: `var(--slate)`,
+          }}>
+        <div
+            style={{
+              height: 5,
+              width: `${perc*56}px`,
+              borderRadius: 10,
+              background: `var(--sunshine)`,
+          }}/>
+      </div>
+    );
+  }
   return (
-    <div style={{height: 5, width: 56, borderRadius: 10, background: `var(--${active ? 'sunshine' : 'slate'})`, }}  />
+    <div style={{height: 5,
+      width: 56, borderRadius: 10, background: `var(--${active ? 'sunshine' : 'slate'})`, }} />
   );
 }
 
@@ -98,11 +122,34 @@ class ProfilePage extends Component {
     state = {
         ready: false,
         index: 0,
+        timeElapsed: 0, 
         place: 'Lake Burley Griffin',
     };
 
+    timer = -1;
+
     componentDidMount() {
         setTimeout(() => this.setState({ ready: true }), 500);
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+      if (prevState.index !== this.state.index) {
+        this.setState({timeElapsed: 0})
+      }
+      if ((this.state.ready && !prevState.ready) || prevState.index !== this.state.index) {
+        clearInterval(this.timer);
+        this.timer = setInterval(() => {
+          this.setState({timeElapsed: this.state.timeElapsed + 30});
+          if (this.state.timeElapsed >= TIME_PER_STORY) {
+            clearInterval(this.timer);
+            if (this.state.index < 4) {
+              this.setState({
+                index: this.state.index + 1,
+              });
+            }
+          }
+        }, 30);
+      }
     }
 
     renderLoading = () => {
@@ -125,11 +172,11 @@ class ProfilePage extends Component {
             }}
           >
             <div style={{background: 'url(lake.png)', width: 375, backgroundPosition: 'cover', padding: '62px 24px 13px', display: 'flex', justifyContent: 'space-between',}}>
-              <Bar active={true} />
-              <Bar active={this.state.index >= 1} />
-              <Bar active={this.state.index >= 2} />
-              <Bar active={this.state.index >= 3} />
-              <Bar active={this.state.index >= 4} />
+              <Bar active={true} timeElapsed={this.state.timeElapsed} isCurrent={this.state.index === 0} />
+              <Bar active={this.state.index >= 1} timeElapsed={this.state.timeElapsed} isCurrent={this.state.index === 1} />
+              <Bar active={this.state.index >= 2} timeElapsed={this.state.timeElapsed} isCurrent={this.state.index === 2} />
+              <Bar active={this.state.index >= 3} timeElapsed={this.state.timeElapsed} isCurrent={this.state.index === 3} />
+              <Bar active={this.state.index >= 4} timeElapsed={this.state.timeElapsed} isCurrent={this.state.index === 4} />
             </div>
             <div style={{display: 'flex', height: '100%', transition: 'margin-left 0.2s ease-in-out', marginLeft: -this.state.index*375}}>
               <PlaceStory 
