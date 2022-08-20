@@ -99,7 +99,7 @@ const Bar = ({active, timeElapsed, isCurrent}) => {
             height: 5,
             width: 56,
             borderRadius: 10,
-            background: `var(--slate)`,
+            background: `var(--dark)`,
           }}>
         <div
             style={{
@@ -113,7 +113,7 @@ const Bar = ({active, timeElapsed, isCurrent}) => {
   }
   return (
     <div style={{height: 5,
-      width: 56, borderRadius: 10, background: `var(--${active ? 'sunshine' : 'slate'})`, }} />
+      width: 56, borderRadius: 10, background: `var(--${active ? 'sunshine' : 'dark'})`, }} />
   );
 }
 
@@ -263,7 +263,7 @@ class ProfilePage extends Component {
                     </span>
                     <img src="up.svg" style={{marginTop: 16, width: 24, height: 24, alignSelf: 'center',}} />
                     <span style={{marginTop: 6, color: 'var(--dark)', font: 'var(--copy16)', alignSelf: 'center',}}>
-                      Swipe up to read more
+                      Swipe up to learn more
                     </span>
                   </div>
               </Story>
