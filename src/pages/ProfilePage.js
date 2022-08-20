@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import Slide from "../components/slide/Slide";
 import locations from "../constants/locations";
 
-const Stamp = ({ stampName, date, style }) => {
+const Stamp = ({ stampName, date, style, bgName }) => {
   return (
     <div
       style={{
@@ -17,15 +17,17 @@ const Stamp = ({ stampName, date, style }) => {
         padding: "14px 16px",
         display: "flex",
         flexDirection: "column",
+        backgroundImage: `url(${bgName})`,
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+        filter: date ? "none" : "grayscale(1)",
         ...style,
       }}
     >
       <span style={{ color: "var(--dark)", font: "var(--feature18)" }}>
         {stampName || "Stamp Name"}
       </span>
-      <span
-        style={{ marginTop: 4, color: "var(--slate)", font: "var(--copy12)" }}
-      >
+      <span style={{ marginTop: 4, font: "var(--copy12)" }}>
         {date && `Obtained ${date}`}
       </span>
     </div>
@@ -103,15 +105,22 @@ class ProfilePage extends Component {
             >
               {locations
                 .filter((location) => !!location.date)
-                .slice(0, 4)
+                .slice(0, 2)
                 .map((location) => (
                   <Stamp
                     stampName={location.name}
                     date={location.date}
                     style={{ width: "154px" }}
+                    bgName={location.bgName}
                   />
                 ))}
             </div>
+            <Stamp
+              stampName={locations[2].name}
+              date={locations[2].date}
+              style={{ marginTop: "12px", backgroundSize: "110%" }}
+              bgName={locations[2].bgName}
+            />
             <Button
               to="/collection"
               label="See full collection"
@@ -142,12 +151,18 @@ class ProfilePage extends Component {
             </div>
 
             <Slide style={{ marginTop: 16 }}>
-              {locations
-                .filter((location) => !location.date)
-                .slice(1, 4)
-                .map((location) => (
-                  <Stamp stampName={location.name} />
-                ))}
+              <Stamp
+                stampName={locations[3].name}
+                bgName="stamp/lake-small.svg"
+              />
+              <Stamp
+                stampName={locations[9].name}
+                bgName="stamp/percival-small.svg"
+              />
+              <Stamp
+                stampName={locations[10].name}
+                bgName="stamp/urambi-small.svg"
+              />
             </Slide>
 
             <span
@@ -169,13 +184,14 @@ class ProfilePage extends Component {
                 margin: "16px 0",
                 padding: "16px 24px",
                 display: "flex",
-                textDecoration: 'none',
-                color: 'initial',
+                textDecoration: "none",
+                color: "initial",
               }}
             >
               <img
-                  src="https://live-production.wcms.abc-cdn.net.au/04735f3fcbe87901266dca0b4ab93ce2?impolicy=wcms_crop_resize&cropH=394&cropW=700&xPos=0&yPos=0&width=862&height=485"
-                  style={{ width: 80, height: 80, background: "#D9D9D9" }}/>
+                src="https://live-production.wcms.abc-cdn.net.au/04735f3fcbe87901266dca0b4ab93ce2?impolicy=wcms_crop_resize&cropH=394&cropW=700&xPos=0&yPos=0&width=862&height=485"
+                style={{ width: 80, height: 80, background: "#D9D9D9" }}
+              />
               <div
                 style={{
                   flex: 1,
@@ -187,7 +203,8 @@ class ProfilePage extends Component {
                 <span
                   style={{ color: "var(--dark)", font: "var(--mini-title)" }}
                 >
-                  City of Sydney to consider ban on fossil fuel advertising to fight climate change, pollution
+                  City of Sydney to consider ban on fossil fuel advertising to
+                  fight climate change, pollution
                 </span>
                 <span
                   style={{
@@ -196,7 +213,9 @@ class ProfilePage extends Component {
                     font: "var(--copy14)",
                   }}
                 >
-                  ABC Radio Sydney<br/>By Rosemary Bolger
+                  ABC Radio Sydney
+                  <br />
+                  By Rosemary Bolger
                 </span>
               </div>
             </a>

@@ -24,7 +24,7 @@ const Stamp = ({ stampName, date, bgName }) => {
         backgroundPosition: "center",
         position: "relative",
         filter: date ? "none" : "grayscale(1)",
-        cursor: 'pointer',
+        cursor: "pointer",
       }}
     >
       <span style={{ color: "var(--dark)", font: "var(--feature18)" }}>

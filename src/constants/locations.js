@@ -6,16 +6,17 @@ const locations = [
   },
   {
     name: "Black Mountain",
-    bgName: "collection-bg.svg",
-  },
-  {
-    name: "Lake Burley Griffin",
-    bgName: "stamp/lake.svg",
+    bgName: "stamp/black.svg",
     date: "Jan 1, 2022",
   },
   {
     name: "Australian National Botanic Gardens",
     bgName: "stamp/garden.svg",
+    date: "Jan 1, 2022",
+  },
+  {
+    name: "Lake Burley Griffin",
+    bgName: "stamp/lake.svg",
   },
   {
     name: "Cooleman Ridge Nature Reserve",
@@ -23,7 +24,7 @@ const locations = [
   },
   {
     name: "Bruce Ridge Nature Reserve",
-    bgName: "collection-bg.svg",
+    bgName: "stamp/bruce.svg",
   },
   {
     name: "Jerrabomberra Wetlands",
@@ -36,7 +37,6 @@ const locations = [
   {
     name: "Mount Ainslie",
     bgName: "stamp/ainslie.svg",
-    date: "Jan 1, 2022",
   },
   {
     name: "Percival Hill",
@@ -48,7 +48,7 @@ const locations = [
   },
   {
     name: "Tuggeranong Hill",
-    bgName: "collection-bg.svg",
+    bgName: "stamp/tugge.svg",
   },
 ];
 
