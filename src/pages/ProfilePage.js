@@ -110,7 +110,7 @@ class ProfilePage extends Component {
                   <Stamp
                     stampName={location.name}
                     date={location.date}
-                    style={{ width: "154px" }}
+                    style={{ width: "154px", cursor: 'pointer', }}
                     bgName={location.bgName}
                   />
                 ))}
