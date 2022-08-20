@@ -89,23 +89,25 @@ class ProfilePage extends Component {
                   <Stamp/>
                 </Slide>
 
-                <span style={{color: 'var(--dark)', font: 'var(--title)',}}>Article of the week</span>
+                <span style={{marginTop: 44, color: 'var(--dark)', font: 'var(--title)',}}>Article of the week</span>
 
                 <div
                     style={{
                       boxShadow: '0px 0px 4px rgba(151, 151, 151, 0.4)',
                       borderRadius: 10,
-                      marginTop: 16, 
+                      margin: '16px 0',
                       padding: '16px 24px',
                       display: 'flex', 
-                      flexDirection: 'column',
                     }}>
-                  <span style={{color: 'var(--dark)', font: 'var(--mini-title)'}}>
-                    Article name
-                  </span>
-                  <span style={{marginTop: 4, color: 'var(--slate)', font: 'var(--copy14)'}}>
-                    Author or publisher
-                  </span>
+                  <div style={{width: 80, height: 80, background: '#D9D9D9'}}></div>
+                  <div style={{flex: 1, display: 'flex', flexDirection: 'column', marginLeft: 16,}}>
+                    <span style={{color: 'var(--dark)', font: 'var(--mini-title)'}}>
+                      Article about biodiversity or climate change
+                    </span>
+                    <span style={{marginTop: 4, color: 'var(--slate)', font: 'var(--copy14)'}}>
+                      Author or publisher
+                    </span>
+                  </div>
                 </div>
               </div>
             </ScrollView>
