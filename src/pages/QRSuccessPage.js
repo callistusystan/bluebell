@@ -44,7 +44,7 @@ class QRSuccessPage extends Component {
             <AnimatedTick />
             <span
               style={{
-                marginTop: 56,
+                marginTop: 32,
                 font: "var(--title)",
               }}
             >
@@ -69,9 +69,9 @@ class QRSuccessPage extends Component {
             </span>
 
             <Button
-              to="/profile"
+              to="/lake"
               label="Lake Burley Story"
-              style={{ marginTop: 56 }}
+              style={{ marginTop: 32 }}
             />
             <Button
               to="/profile"
@@ -80,6 +80,11 @@ class QRSuccessPage extends Component {
               style={{ marginTop: 16 }}
             />
           </div>
+          <img
+            src="qrSuccessBg.svg"
+            alt=""
+            style={{ position: "absolute", bottom: "-16px" }}
+          />
         </ScrollView>
         <BottomBar />
       </React.Fragment>
@@ -102,7 +107,7 @@ const styles = {
     height: "100%",
     display: "flex",
     flexDirection: "column",
-    background: "var(--snow)",
+    background: "var(--sunshine)",
   },
 };
 
