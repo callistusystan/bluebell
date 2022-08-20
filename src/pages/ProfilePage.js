@@ -160,13 +160,17 @@ class ProfilePage extends Component {
               Article of the week
             </span>
 
-            <div
+            <a
+              target="_blank"
+              href="https://www.abc.net.au/news/2022-08-20/sydney-council-considers-coal-gas-oil-advertising-ban-motion/101352790"
               style={{
                 boxShadow: "0px 0px 4px rgba(151, 151, 151, 0.4)",
                 borderRadius: 10,
                 margin: "16px 0",
                 padding: "16px 24px",
                 display: "flex",
+                textDecoration: 'none',
+                color: 'initial',
               }}
             >
               <img
@@ -195,7 +199,7 @@ class ProfilePage extends Component {
                   ABC Radio Sydney<br/>By Rosemary Bolger
                 </span>
               </div>
-            </div>
+            </a>
           </div>
         </ScrollView>
         <BottomBar />
