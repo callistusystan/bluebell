@@ -12,25 +12,22 @@ class HomePage extends Component {
     };
 
     componentDidMount() {
-        setTimeout(() => this.setState({ ready: true }), 2000);
+        setTimeout(() => this.setState({ ready: true }), 500);
     }
 
     renderLoading = () => {
         return (
             <LoadingView>
-                <GridLoader color='#ffb432' loading={!this.state.ready} />
+                <GridLoader color='var(--bluebell)' loading={!this.state.ready} />
             </LoadingView>
         );
     };
 
     renderBody = () => {
         return (
-            <ScrollView isDark>
-                <div style={{ height: '200%', display: 'flex', flexDirection: 'column' }}>
-                    <h1 style={{ color: 'rgb(250, 250, 255)' }}>React App</h1>
-                    <div style={{ flex: 1 }} />
-                    <h2 style={{ color: 'rgb(250, 250, 255)' }}>You've reached the end!</h2>
-                </div>
+            <ScrollView>
+              <div style={{ height: '200%', display: 'flex', flexDirection: 'column' }}>
+              </div>
             </ScrollView>
         );
     };
@@ -38,29 +35,7 @@ class HomePage extends Component {
     render() {
         return (
             <div style={styles.container}>
-                <DeviceBar
-                    title='z App'
-                    position='top'
-                    noBorder
-                    isAppBar
-                    titleStyle={{
-                        color: 'rgb(250, 250, 255)'
-                    }}
-                    style={{
-                        borderColor: 'rgba(255, 255, 255, .2)'
-                    }}
-                />
-                {this.state.ready ? this.renderBody() : this.renderLoading()}
-                <DeviceBar
-                    title='Bottom Bar'
-                    position='bottom'
-                    titleStyle={{
-                        color: 'rgb(250, 250, 255)'
-                    }}
-                    style={{
-                        borderColor: 'rgba(255, 255, 255, .2)'
-                    }}
-                />
+              {this.state.ready ? this.renderBody() : this.renderLoading()}
             </div>
         );
     }
@@ -72,10 +47,7 @@ const styles = {
         height: '100%',
         display: 'flex',
         flexDirection: 'column',
-        backgroundImage: `url(${Background})`,
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        backgroundAttachment: 'fixed'
+        background: 'var(--bark)',
     }
 };
 

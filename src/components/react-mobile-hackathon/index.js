@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import IPhoneX from './devices/IPhoneX';
-import { QRCode } from 'react-qr-svg';
 
 let is_safari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
 let is_chrome = /Chrome|CriOS/.test(navigator.userAgent);
@@ -25,30 +24,39 @@ class MobileHackathon extends Component {
                 <div
                     className='react-app-link-container'
                     style={{
-                        marginLeft: '8%',
-                        backgroundColor: '#FFF',
-                        borderRadius: 20,
-                        boxShadow: '0 4px 16px rgba(0, 0, 0, 0.3)',
-                        width: 400,
-                        display: 'none',
+                        marginLeft: 226,
+                        display: 'flex',
                         flexDirection: 'column',
+                        color: 'var(--cream)', font: 'var(--feature)',
                         padding: 16
-                    }}
-                >
-                    <h1 style={{ fontSize: 40 }}>{this.props.appName || 'React App'}</h1>
-                    <p style={{ fontSize: 28, color: '#555' }}>Try it out!</p>
-                    <QRCode
-                        bgColor="#FFFFFF"
-                        fgColor="#000000"
-                        level="Q"
-                        style={{
-                            marginTop: 16,
-                            width: 256,
-                            alignSelf: 'center'
-                        }}
-                        value={this.props.url || 'http://localhost:3000/'}
-                    />
-                    <a href={this.props.url || 'http://localhost:3000/'} style={{ fontSize: 24, letterSpacing: 2, color: '#007BFF', marginTop: 16, alignSelf: 'center' }}>{this.props.displayUrl || 'react-app.com'}</a>
+                    }}>
+                  <img src="logo.svg" style={{width: 395,}} />
+                  <span style={{color: 'var(--cream)', font: 'var(--feature)', marginTop: 64, marginBottom: 48}}>
+                    Uncovering Canberra’s bushland.
+                  </span>
+                  <a target="_blank" href="https://github.com/callistusystan/cycl" style={{textDecoration: 'none', color: 'var(--cream)', display: 'flex', alignItems: 'center', marginBottom: 24,}}>
+                    <span style={{borderBottom: '1px solid var(--cream)'}}>Git repo</span>
+                    <span style={{marginLeft: 12}}>↗</span>
+                  </a>
+                  <a
+                      target="_blank" href="https://www.figma.com/file/4G6REebpYfX2NsLUyF6R1T/cycl?node-id=921%3A389"
+                      style={{textDecoration: 'none', color: 'var(--cream)', display: 'flex', alignItems: 'center', marginBottom: 24,}}>
+                    <span style={{borderBottom: '1px solid var(--cream)'}}>Figma mock</span>
+                    <span style={{marginLeft: 12}}>↗</span>
+                  </a>
+                  <a target="_blank" href="https://www.youtube.com" style={{textDecoration: 'none', color: 'var(--cream)', display: 'flex', alignItems: 'center', marginBottom: 24,}}>
+                    <span style={{borderBottom: '1px solid var(--cream)'}}>Video pitch</span>
+                    <span style={{marginLeft: 12}}>↗</span>
+                  </a>
+                  <a target="_blank" href="https://www.govhack.org" style={{textDecoration: 'none', color: 'var(--cream)', display: 'flex', alignItems: 'center'}}>
+                    <span style={{borderBottom: '1px solid var(--cream)'}}>Govhack project page</span>
+                    <span style={{marginLeft: 12}}>↗</span>
+                  </a>
+                  
+                  <div style={{display: 'flex', alignItems: 'center', marginTop: 64,}}>
+                    <span style={{color: 'var(--cream)', font: 'var(--feature)', }}>Built by</span>
+                    <img src="milkbox.svg" style={{marginLeft: 12, width: 128}} />
+                  </div>
                 </div>
             </div>
         );
