@@ -160,18 +160,22 @@ class ProfilePage extends Component {
               Article of the week
             </span>
 
-            <div
+            <a
+              target="_blank"
+              href="https://www.abc.net.au/news/2022-08-20/sydney-council-considers-coal-gas-oil-advertising-ban-motion/101352790"
               style={{
                 boxShadow: "0px 0px 4px rgba(151, 151, 151, 0.4)",
                 borderRadius: 10,
                 margin: "16px 0",
                 padding: "16px 24px",
                 display: "flex",
+                textDecoration: 'none',
+                color: 'initial',
               }}
             >
-              <div
-                style={{ width: 80, height: 80, background: "#D9D9D9" }}
-              ></div>
+              <img
+                  src="https://live-production.wcms.abc-cdn.net.au/04735f3fcbe87901266dca0b4ab93ce2?impolicy=wcms_crop_resize&cropH=394&cropW=700&xPos=0&yPos=0&width=862&height=485"
+                  style={{ width: 80, height: 80, background: "#D9D9D9" }}/>
               <div
                 style={{
                   flex: 1,
@@ -183,7 +187,7 @@ class ProfilePage extends Component {
                 <span
                   style={{ color: "var(--dark)", font: "var(--mini-title)" }}
                 >
-                  Article about biodiversity or climate change
+                  City of Sydney to consider ban on fossil fuel advertising to fight climate change, pollution
                 </span>
                 <span
                   style={{
@@ -192,10 +196,10 @@ class ProfilePage extends Component {
                     font: "var(--copy14)",
                   }}
                 >
-                  Author or publisher
+                  ABC Radio Sydney<br/>By Rosemary Bolger
                 </span>
               </div>
-            </div>
+            </a>
           </div>
         </ScrollView>
         <BottomBar />
