@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Capriola&family=Gill Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Capriola&display=swap');
+@font-face {
+  font-family: "GillSans";
+  src: url("/GillSans.woff") format('woff');
+}
 
 * {
     margin: 0;
@@ -8,9 +12,9 @@
     --feature: normal normal 400 32px/32px 'Capriola';
     --title: normal normal 400 24px/24px 'Capriola';
     --mini-title: normal normal 600 18px/20px 'Capriola';
-    --copy16: normal normal 400 16px/18px 'Gill Sans';
-    --copy14: normal normal 400 14px/16px 'Gill Sans';
-    --copy12: normal normal 400 12px/14px 'Gill Sans';
+    --copy16: normal normal 400 16px/18px 'GillSans';
+    --copy14: normal normal 400 14px/16px 'GillSans';
+    --copy12: normal normal 400 12px/14px 'GillSans';
     --snow: #fff;
     --mist: #F8F8F8;
     --sunshine: #F2EAB6;
