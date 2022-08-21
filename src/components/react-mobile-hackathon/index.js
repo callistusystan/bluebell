@@ -43,7 +43,7 @@ class MobileHackathon extends Component {
           </span>
           <a
             target="_blank"
-            href="https://github.com/callistusystan/cycl"
+            href="https://github.com/callistusystan/bluebell"
             style={{
               textDecoration: "none",
               color: "var(--dark)",
@@ -59,7 +59,7 @@ class MobileHackathon extends Component {
           </a>
           <a
             target="_blank"
-            href="https://www.figma.com/file/4G6REebpYfX2NsLUyF6R1T/cycl?node-id=921%3A389"
+            href="https://www.figma.com/file/lXBYGNlYDr9DL7l9AEef72/bluebell?node-id=902%3A1876"
             style={{
               textDecoration: "none",
               color: "var(--dark)",
@@ -75,7 +75,7 @@ class MobileHackathon extends Component {
           </a>
           <a
             target="_blank"
-            href="https://www.youtube.com"
+            href="https://www.youtube.com/watch?v=ikPt0GRcaN4"
             style={{
               textDecoration: "none",
               color: "var(--dark)",
