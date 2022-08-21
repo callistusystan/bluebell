@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import locations from "../constants/locations";
 import Button from "../components/button";
 
-const Stamp = ({ stampName, date, bgName }) => {
+const Stamp = ({ stampName, date, bgName, animate, push }) => {
   return (
     <div
       style={{
@@ -23,8 +23,16 @@ const Stamp = ({ stampName, date, bgName }) => {
         backgroundSize: "110%",
         backgroundPosition: "center",
         position: "relative",
-        filter: date ? "none" : "grayscale(1)",
-        cursor: "pointer",
+        cursor: date ? "pointer" : "auto",
+      }}
+      className={`${animate ? "animated-grayscale" : "grayscale"} ${
+        date ? (animate ? "amimated-ungrayscale" : "ungrayscale") : ""
+      }`}
+      role="button"
+      onClick={() => {
+        if (date) {
+          push("/lake");
+        }
       }}
     >
       <span style={{ color: "var(--dark)", font: "var(--feature18)" }}>
@@ -42,10 +50,25 @@ const Stamp = ({ stampName, date, bgName }) => {
 class StampCollectionPage extends Component {
   state = {
     ready: false,
+    animateUnlockLake: false,
   };
 
   componentDidMount() {
     setTimeout(() => this.setState({ ready: true }), 500);
+
+    setTimeout(() => {
+      if (
+        this.props.location.state &&
+        this.props.location.state.isFromCheckIn
+      ) {
+        setTimeout(() => {
+          this.setState({ animateUnlockLake: true });
+        }, 500);
+        document
+          .querySelector(".scroll--simple")
+          .scroll({ top: 400, behavior: "smooth" });
+      }
+    }, 800);
   }
 
   renderLoading = () => {
@@ -133,11 +156,17 @@ class StampCollectionPage extends Component {
               alignItems: "center",
             }}
           >
-            {locations.map((location) => (
+            {locations.map((location, index) => (
               <Stamp
                 stampName={location.name}
                 bgName={location.bgName}
-                date={location.date}
+                date={
+                  index === 3 && this.state.animateUnlockLake
+                    ? "Jan 1, 2022"
+                    : location.date
+                }
+                animate={index === 3}
+                push={this.props.history.push}
               />
             ))}
             <Button

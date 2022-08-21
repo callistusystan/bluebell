@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import ScrollView from "../components/react-mobile-hackathon/devices/ScrollView";
 import LoadingView from "../components/react-mobile-hackathon/devices/LoadingView";
 import { HashLoader } from "react-spinners";
-import { Link } from "react-router-dom";
 import Button from "../components/button";
 import AnimatedTick from "../components/animated-tick";
 import BottomBar from "../components/bottom-bar/BottomBar";
@@ -74,7 +73,7 @@ class QRSuccessPage extends Component {
               style={{ marginTop: 32 }}
             />
             <Button
-              to="/collection"
+              to={{ pathname: "/collection", state: { isFromCheckIn: true } }}
               label="See in collection"
               variant="secondary"
               style={{ marginTop: 16 }}
@@ -83,7 +82,11 @@ class QRSuccessPage extends Component {
           <img
             src="qrSuccessBg.svg"
             alt=""
-            style={{ position: "absolute", bottom: "-16px", pointerEvents: 'none', }}
+            style={{
+              position: "absolute",
+              bottom: "-16px",
+              pointerEvents: "none",
+            }}
           />
         </ScrollView>
         <BottomBar />

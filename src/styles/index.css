@@ -28,6 +28,10 @@
     --dark: #1E1E1E;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 @media only screen and (min-width: 600px) {
 
     .react-app-link-container {
@@ -83,4 +87,36 @@
         }
     }
 
+}
+
+.grayscale {
+    filter: grayscale(1);
+}
+
+.animated-grayscale {
+    filter: grayscale(1);
+    transition: 1s;
+}
+
+.ungrayscale {
+    filter: grayscale(0);
+}
+
+.amimated-ungrayscale {
+    filter: grayscale(0);
+    animation: pop 1s;
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
